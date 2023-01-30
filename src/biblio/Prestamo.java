@@ -3,15 +3,35 @@ package biblio;
 import java.sql.Date;
 
 public class Prestamo {
+	private int id_libro;
+	private int id_socio;
 	private Date fecha;
 	private boolean devuelto;
 	
 	public Prestamo() {
 	}
 
-	public Prestamo(Date fecha, boolean devuelto) {
+	public Prestamo(int id_libro, int id_socio, Date fecha, boolean devuelto) {
+		this.id_libro = id_libro;
+		this.id_socio = id_socio;
 		this.fecha = fecha;
 		this.devuelto = devuelto;
+	}
+
+	public int getId_libro() {
+		return id_libro;
+	}
+
+	public void setId_libro(int id_libro) {
+		this.id_libro = id_libro;
+	}
+
+	public int getId_socio() {
+		return id_socio;
+	}
+
+	public void setId_socio(int id_socio) {
+		this.id_socio = id_socio;
 	}
 
 	public Date getFecha() {
