@@ -38,4 +38,11 @@ public class GestorBBDD extends Conector{
 		return libro;
 	}
 	
+//	public void modificarLibro(int id) throws SQLException {
+//		super.conectar();
+//		pst = con.prepareStatement("UPDATE libros set titulo = ?, autor = ?, num_pag = ? WHERE id = ?");
+//		pst.setString(1, );
+//		pst.setInt(4, id);
+//	}
+	
 }
