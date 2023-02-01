@@ -3,6 +3,7 @@ package biblio;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class GestorBBDD extends Conector{
 	PreparedStatement pst;
@@ -38,11 +39,26 @@ public class GestorBBDD extends Conector{
 		return libro;
 	}
 	
-//	public void modificarLibro(int id) throws SQLException {
-//		super.conectar();
-//		pst = con.prepareStatement("UPDATE libros set titulo = ?, autor = ?, num_pag = ? WHERE id = ?");
-//		pst.setString(1, );
-//		pst.setInt(4, id);
-//	}
+	public ArrayList<Libro> getLibros() throws SQLException {
+		super.conectar();
+		ArrayList<Libro> libros = new ArrayList<Libro>();
+		String sentenciaSelect = "SELECT * FROM libros";
+		ResultSet resultado = pst.executeQuery(sentenciaSelect);
+		while (resultado.next()) {
+			System.out.println(resultado.getInt(1) + ". " + resultado.getString(2));
+		}
+		return libros;
+	}
+	
+	public void modificarLibro(Libro libro) throws SQLException {
+		super.conectar();
+		pst = con.prepareStatement("UPDATE libros set titulo = ?, autor = ?, num_pag = ? WHERE id = ?");
+		pst.setString(1, libro.getTitulo());
+		pst.setString(2, libro.getAutor());
+		pst.setInt(3, libro.getNum_pag());
+		pst.setInt(4, libro.getId());
+		
+		pst.execute();
+	}
 	
 }

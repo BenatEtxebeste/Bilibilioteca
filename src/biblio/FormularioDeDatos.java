@@ -27,15 +27,36 @@ public class FormularioDeDatos {
 		
 		System.out.println("Introduce el nuevo numero de paginas");
 		libro.setNum_pag(Integer.parseInt(scan.nextLine()));
+		
 		return libro;
 	}
 	
 	public static int pedirIdLibro(Scanner scan) {
-		int id;
-		
 		System.out.println("Introduce el id del libro");
-		id = Integer.parseInt(scan.nextLine());
+		int id = Integer.parseInt(scan.nextLine());
 		
 		return id;
+	}
+	
+	public static Socio pedirDatosSocio(Scanner scan) {
+		Socio socio = new Socio();
+		
+		System.out.println("Introduce el nombre");
+		socio.setNombre(scan.nextLine());
+		
+		System.out.println("Introduce el apellido");
+		socio.setApellido(scan.nextLine());
+		
+		System.out.println("Introduce la direccion");
+		socio.setDireccion(scan.nextLine());
+		
+		System.out.println("Introduce la poblacion");
+		socio.setPoblacion(scan.nextLine());
+		
+		System.out.println("Introduce la provincia");
+		socio.setProvincia(scan.nextLine());
+		
+		System.out.println("Introduce el dni");
+		socio.setDni(scan.nextLine());
 	}
 }
