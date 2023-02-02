@@ -1,10 +1,11 @@
 package biblio;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class GestorSocios {
 
-public static void run(Scanner scan) {
+public static void run(Scanner scan) throws SQLException {
 		
 		int opcion;
 		Socio socio = new Socio();
@@ -15,12 +16,27 @@ public static void run(Scanner scan) {
 			
 			switch (opcion) {
 			case Menu.INSERTAR_SOCIO:
+				
+				socio = FormularioDeDatos.pedirDatosSocio(scan);
+				gestorBBDD.insertarSocio(socio);
+				
 				break;
 			case Menu.ELIMINAR_SOCIO:
+				
+				gestorBBDD.eliminarSocio(FormularioDeDatos.pedirIdSocio(scan));
+				
 				break;
 			case Menu.MODIFICAR_SOCIO:
+				
+				socio = gestorBBDD.getSocio(FormularioDeDatos.pedirIdSocio(scan));
+				FormularioDeDatos.modificarDatosSocio(socio, scan);
+				gestorBBDD.modificarSocio(socio);
+				
 				break;
 			case Menu.VER_SOCIOS:
+				
+				Visor.mostrarSocios(gestorBBDD.getSocios());
+				
 				break;
 			case Menu.SALIR:
 				System.out.println("Volviendo al gestor de biblioteca");
