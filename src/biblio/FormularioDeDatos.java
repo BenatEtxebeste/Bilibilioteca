@@ -58,5 +58,38 @@ public class FormularioDeDatos {
 		
 		System.out.println("Introduce el dni");
 		socio.setDni(scan.nextLine());
+		
+		return socio;
+	}
+	
+	public static Socio modificarDatosSocio(Libro libro, Scanner scan) {
+		Socio socio = new Socio();
+		
+		System.out.println("Introduce el nuevo nombre");
+		socio.setNombre(scan.nextLine());
+		
+		System.out.println("Introduce el nuevo apellido");
+		socio.setApellido(scan.nextLine());
+		
+		System.out.println("Introduce la nueva direccion");
+		socio.setDireccion(scan.nextLine());
+		
+		System.out.println("Introduce la nueva poblacion");
+		socio.setPoblacion(scan.nextLine());
+		
+		System.out.println("Introduce la nueva provincia");
+		socio.setProvincia(scan.nextLine());
+		
+		System.out.println("Introduce el nuevo dni");
+		socio.setDni(scan.nextLine());
+		
+		return socio;
+	}
+	
+	public static int pedirIdSocio(Scanner scan) {
+		System.out.println("Introduce el id del socio");
+		int id = Integer.parseInt(scan.nextLine());
+		
+		return id;
 	}
 }
