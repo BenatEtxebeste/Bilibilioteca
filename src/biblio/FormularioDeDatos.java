@@ -62,8 +62,7 @@ public class FormularioDeDatos {
 		return socio;
 	}
 	
-	public static Socio modificarDatosSocio(Libro libro, Scanner scan) {
-		Socio socio = new Socio();
+	public static Socio modificarDatosSocio(Socio socio, Scanner scan) {
 		
 		System.out.println("Introduce el nuevo nombre");
 		socio.setNombre(scan.nextLine());
