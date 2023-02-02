@@ -1,7 +1,6 @@
 package biblio;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GestorLibros {
@@ -36,7 +35,7 @@ public class GestorLibros {
 				break;
 			case Menu.VER_LIBROS:
 				
-				
+					Visor.mostrarLibros(gestorBBDD.getLibros());
 				
 				break;
 			case Menu.SALIR:
